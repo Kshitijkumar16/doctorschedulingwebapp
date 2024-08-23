@@ -36,11 +36,11 @@ const PatientForm = () => {
 		},
 	});
 
-	async function onSubmit({
+	const onSubmit = async ({
 		name,
 		email,
 		phone,
-	}: z.infer<typeof UserFormValidation>) {
+	}: z.infer<typeof UserFormValidation>) => {
 		setIsLoading(true);
 
 		try {
@@ -53,7 +53,7 @@ const PatientForm = () => {
 			console.log(error);
 			setIsLoading(false);
 		}
-	}
+	};
 
 	return (
 		<Form {...form}>
